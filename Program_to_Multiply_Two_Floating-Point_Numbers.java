@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class AvgNum
+public class FloatMul
 {
     public static void main(String[] args)
     {
