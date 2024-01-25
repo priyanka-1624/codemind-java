@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Multiply
+public class Division
 {
     public static void main(String[] args)
     {
