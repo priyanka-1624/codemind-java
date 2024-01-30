@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Colors
+public class Largest
 {
     public static void main(String[] args)
     {
