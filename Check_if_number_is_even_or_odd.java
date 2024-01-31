@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class CarCost
+public class EvenOrOdd
 {
     public static void main(String[] args)
     {
