@@ -1,36 +1,41 @@
 import java.util.Scanner;
-public class ArraySum
-{
-    public static void main(String[] args)
-    {
+public class NextPrimePalindrome {
+    public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        for(int i=n+1;i<=100000;i++)
-        {
-            int t=i;
-            int r=0,s=0;
-            while(t>0)
-            {
-                r=t%10;
-                s=r+s*10;
-                t=t/10;
-            }
-            if(s==i)
-            {
-                int c=0;
-                for(int j=1;j<=i;j++)
-                {
-                   if(i%j==0)
-                   {
-                       c=c+1;
-                   }
-                }
-                if(c==2)
-                {
-                System.out.println(i);
-                break;
-                }
-              }
+        int n = sc.nextInt();
+        int nextPrimePalindrome = findNextPrimePalindrome(n);
+        System.out.println(nextPrimePalindrome);
+    }
+
+    public static int findNextPrimePalindrome(int n) {
+        while (true) {
+            n++;
+            if (isPalindrome(n) && isPrime(n))
+                return n;
         }
+    }
+
+    public static boolean isPalindrome(int n) {
+        String str = Integer.toString(n);
+        int len = str.length();
+        for (int i = 0; i < len / 2; i++) {
+            if (str.charAt(i) != str.charAt(len - i - 1))
+                return false;
+        }
+        return true;
+    }
+
+    public static boolean isPrime(int n) {
+        if (n <= 1)
+            return false;
+        if (n <= 3)
+            return true;
+        if (n % 2 == 0 || n % 3 == 0)
+            return false;
+        for (int i = 5; i * i <= n; i += 6) {
+            if (n % i == 0 || n % (i + 2) == 0)
+                return false;
+        }
+        return true;
     }
 }
